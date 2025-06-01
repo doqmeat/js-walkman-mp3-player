@@ -1,0 +1,141 @@
+#music {
+	font-family: arial;
+	grid-area: music;
+	padding: 10px;
+	background: rgb(193, 215, 242);
+	background: linear-gradient(
+		320deg,
+		rgba(193, 215, 242, 1) 0%,
+		rgba(255, 208, 236, 1) 48%,
+		rgba(255, 229, 150, 1) 100%
+	);
+	border: 3px solid #e7d7f5;
+	border-top: 1px;
+	border-right: 0px;
+	margin-left: 50px;
+	color: rgb(140, 129, 179);
+	font-size: 21px;
+	line-height: 31px;
+	width: 200px;
+	height: 400px;
+	box-shadow: -5px 5px 1px 1px #32283c38;
+	transition-duration: 0.5s;
+}
+
+#album span {
+	display: inline-block;
+	background: white;
+	color: black;
+	border: 1px solid white;
+	width: 80px;
+	height: 80px;
+}
+
+#music:hover {
+	box-shadow: none;
+}
+
+.icons {
+	font-size: 10px;
+	text-shadow: 1px 1px 2px #ffffff, -1px -1px 2px #ffffff;
+}
+
+.circle {
+	pointer-events: none;
+	position: absolute;
+	border-radius: 50%;
+	border: 1px solid rgb(67, 58, 98);
+}
+
+.small {
+	width: 50px;
+	height: 50px;
+	top: 288px;
+	left: 72px;
+}
+
+.big {
+	top: 252px;
+	left: 37px;
+	width: 121px;
+	height: 121px;
+}
+
+#screen {
+	background: rgb(39, 36, 36);
+	text-align: center;
+	margin: auto;
+	margin-top: 10px;
+	width: 180px;
+	height: 230px;
+	border: 20px solid black;
+	border-top-width: 30px;
+	border-bottom-width: 30px;
+	border-radius: 20px;
+	font-size: 12px;
+	line-height: 16px;
+	overflow: auto;
+	color: white;
+	padding: 5px;
+	scrollbar-color: rgb(39, 36, 36) rgb(39, 36, 36);
+	word-break: break-all;
+}
+
+.up,
+.down {
+	text-align: center;
+}
+
+.left,
+.right,
+.up,
+.down {
+	font-size: 12px;
+}
+.left {
+	padding-right: 21px;
+}
+
+.right {
+	padding-left: 21px;
+}
+
+.play-pause {
+	text-align: center;
+	line-height: 15px;
+}
+
+.play {
+	vertical-align: text-bottom;
+	font-size: 14px;
+	color: white;
+}
+
+.pause {
+	font-size: 10px;
+	color: white;
+}
+
+.sony {
+	font-family: simple;
+	letter-spacing: 3px;
+	color: white;
+	position: absolute;
+	left: 78px;
+	top: 8px;
+	font-size: 18px;
+}
+
+#song {
+	text-align: left;
+}
+
+#screen p {
+	margin: 0;
+	padding: 0;
+}
+
+#music a {
+	color: inherit;
+	text-decoration: none;
+}
