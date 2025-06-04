@@ -9,7 +9,6 @@
 	grid-area: music;
 	padding-top: 1px;
 	background: rgb(232, 84, 84);
-	border: 2px solid #3a304244;
 	border-top: 1px;
 	border-right: 0px;
 	margin-left: 50px;
@@ -45,9 +44,9 @@ hr {
 	display: grid;
 	border: 2px solid rgb(213, 213, 213);
 	width: 63%;
-	height: 27%;
+	height: 30%;
 	margin: auto;
-	margin-top: 15px;
+	margin-top: 10px;
 	grid-template-columns: 33% 33% 33%;
 	grid-template-rows: 33% 33% 33%;
 	padding: 0px;
@@ -80,13 +79,11 @@ button#play-pause {
 	background: rgb(39, 36, 36);
 	text-align: left;
 	margin: auto;
-	margin-top: 10px;
-	width: 180px;
-	height: 250px;
+	width: 100%;
+	height: 63%;
 	border: 20px solid black;
 	border-top-width: 30px;
 	border-bottom-width: 30px;
-	border-radius: 20px;
 	font-size: 11px;
 	letter-spacing: 1px;
 	line-height: 13px;
@@ -119,17 +116,17 @@ p.info {
 	display: inline-block;
 	position: absolute;
 	float: right;
-	margin-top: 43px;
-	margin-left: 50px;
+	margin-top: 30%;
+	margin-left: 40%;
 }
 
 /* bottom bar */
 #bar {
-	background: #3b3b3b;
+	background: #454343;
 	background: linear-gradient(
 		360deg,
-		rgba(59, 59, 59, 1) 0%,
-		rgba(227, 227, 227, 1) 100%
+		rgb(29, 28, 28) 0%,
+		rgb(149, 149, 149) 100%
 	);
 	width: 100%;
 	font-size: 9px;
@@ -161,14 +158,20 @@ p.info {
 	height: 4px;
 	padding: 0px;
 	margin: 0px;
-	background: rgb(81, 81, 81);
+	background: #454343;
+	background: linear-gradient(
+		360deg,
+		rgb(68, 68, 68) 0%,
+		rgb(129, 129, 129) 100%
+	);
+	border-bottom: 1px solid black;
 }
 
 /* song progress bar - thumb */
 .track-progress::-webkit-slider-thumb,
 .track-progress::-moz-range-thumb {
-	height: 3px;
-	width: 3px;
+	height: 2.6px;
+	width: 2px;
 	background: rgb(96, 155, 226);
 	cursor: pointer;
 	border: none;
