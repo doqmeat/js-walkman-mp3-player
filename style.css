@@ -3,96 +3,151 @@
 }
 
 #music {
-	font-family: arial;
+	font-family: arial, nerdfont;
 	grid-area: music;
 	padding-top: 1px;
-	background: rgb(150, 179, 215);
+	background: rgb(232, 84, 84);
 	border: 2px solid #3a304244;
 	border-top: 1px;
 	border-right: 0px;
 	margin-left: 50px;
-	color: rgb(140, 129, 179);
+	color: rgb(153, 57, 57);
 	font-size: 21px;
 	line-height: 31px;
 	width: 200px;
 	height: 430px;
-	box-shadow: inset 2px -4px 10px #7d96b7;
+	box-shadow: inset 2px -4px 10px #7e2222;
 	transition-duration: 0.5s;
 	border-radius: 10px;
 }
 
+/* album cover */
 #album {
-	display: block;
-	margin: auto;
 	background: white;
 	color: black;
 	border: 1px solid white;
-	width: 130px;
-	height: 130px;
+	width: 40%;
+	margin: 0 0 0 5px;
+}
+
+hr {
+	margin: 1px 0px;
+	padding: 0px;
 }
 
 .circle {
 	pointer-events: none;
 	position: absolute;
 	border-radius: 50%;
-	border: 1px solid rgb(67, 58, 98);
 }
 
 .small {
+	border: 1px solid rgb(132, 49, 49);
+	z-index: 2;
 	width: 50px;
 	height: 50px;
-	top: 310px;
+	top: 320px;
 	left: 134px;
 }
 
 .big {
-	top: 275px;
+	background: rgb(186, 63, 63);
+	z-index: 1;
+	border: 1px solid rgb(221, 217, 217);
+	top: 284px;
 	left: 98px;
 	width: 121px;
 	height: 121px;
 }
 
 #screen {
+	position: relative;
 	background: rgb(39, 36, 36);
 	text-align: left;
 	margin: auto;
 	margin-top: 10px;
 	width: 180px;
-	height: 240px;
+	height: 250px;
 	border: 20px solid black;
 	border-top-width: 30px;
 	border-bottom-width: 30px;
 	border-radius: 20px;
-	font-size: 12px;
-	line-height: 16px;
-	overflow: auto;
+	font-size: 11px;
+	letter-spacing: 1px;
+	line-height: 13px;
+	overflow: hidden;
 	color: white;
-	padding: 5px;
-	scrollbar-color: rgb(39, 36, 36) rgb(39, 36, 36);
+	scrollbar-color: rgb(218, 155, 155) rgb(224, 199, 199);
 }
 
-#top-bar {
-	text-align: center;
-	font-size: 10px;
-	line-height: 10px3;
+#screen .icon {
+	color: rgb(173, 174, 176);
+	font-size: 12px;
+}
+
+#now-playing {
+	display: inline-block;
+	position: absolute;
+	float: right;
+	margin-top: 43px;
+	margin-left: 50px;
+}
+
+p.info {
+	margin: 4px 0px;
+	padding: 0;
+}
+
+#details-screen {
+	position: relative;
+	overflow: scroll;
+	height: 87%;
+}
+
+#bar {
+	background: rgb(94, 94, 94);
+	width: 100%;
+	font-size: 9px;
+	line-height: 0px;
+	padding: 0px;
+}
+
+#playing-status {
+	font-family: nerdfont;
+	font-size: 13px;
+	vertical-align: middle;
+	padding-left: 5px;
+	color: rgb(217, 217, 217);
+}
+
+#battery {
+	font-family: nerdfont;
+	padding-top: 10px;
+	padding-right: 4px;
+	font-size: 13px;
+	float: right;
 }
 
 .up,
 .down,
 .play-pause {
+	position: relative;
 	text-align: center;
 	margin: 16px 0px;
+	z-index: 10;
 }
 
 .left,
 .right,
 .up,
 .down {
+	text-shadow: 2px -1px 2px rgba(251, 160, 160, 0.562);
 	font-size: 12px;
+	cursor: help;
 }
 
 .left {
-	padding-right: 21px;
+	padding-right: 23px;
 }
 
 .right {
@@ -104,9 +159,13 @@
 }
 
 button#play-pause-btn {
+	font-family: inherit;
+	cursor: pointer;
+	color: white;
+	font-size: 15px;
 	background-color: transparent;
 	border: none;
-	padding: 0px;
+	padding: 0px 6px;
 	margin: 0px;
 	line-height: 12px;
 }
@@ -114,15 +173,13 @@ button#play-pause-btn {
 .play {
 	vertical-align: text-bottom;
 	font-size: 14px;
-	color: white;
 }
 
 .pause {
 	font-size: 10px;
-	color: white;
 }
 
-.sony {
+/* .sony {
 	font-family: simple;
 	letter-spacing: 3px;
 	color: white;
@@ -130,19 +187,14 @@ button#play-pause-btn {
 	left: 78px;
 	top: 8px;
 	font-size: 18px;
-}
-
-#screen p {
-	margin: 0;
-	padding: 0;
-}
+} */
 
 #music a {
 	color: inherit;
 	text-decoration: none;
 }
 
-/* ----------------------- */
+/* ---------- from fork ------------- */
 
 .now-playing {
 	font-size: 1rem;
@@ -161,22 +213,21 @@ button#play-pause-btn {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
-	height: 5px;
-	background: black;
-	opacity: 0.7;
+	height: 2px;
+	padding: 0px;
+	margin: 0px;
+	background: rgb(198, 198, 198);
 	-webkit-transition: 0.2s;
 	transition: opacity 0.2s;
 }
 
 /* Modify the appearance of the slider thumb */
 .seek_slider::-webkit-slider-thumb,
-.volume_slider::-webkit-slider-thumb {
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-	background: white;
-	cursor: pointer;
-	border-radius: 50%;
+.seek_slider::-moz-range-thumb {
+	height: 2px;
+	width: 5px;
+	background: rgb(96, 155, 226);
+	cursor: help;
 }
 
 .seek_slider:hover,
@@ -185,14 +236,14 @@ button#play-pause-btn {
 }
 
 .seek_slider {
-	width: 90%;
+	width: 97%;
 }
 
 .volume_slider {
 	width: 70%;
 }
 
-.current-time,
+#current-time,
 .total-duration {
 	display: inline-block;
 	padding: 10px;
@@ -208,4 +259,9 @@ i.fa-pause-circle,
 i.fa-step-forward,
 i.fa-step-backward {
 	cursor: pointer;
+}
+
+@font-face {
+	font-family: "nerdfont";
+	src: url(files/symbolsnerdfont.ttf);
 }

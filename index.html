@@ -11,22 +11,22 @@
 <body>
   <div id="music">
     <div id="screen">
-      <div id="top-bar">
-        <span id="time-clock">1:00am</span>
+      <div id="details-screen">
+        <p class="info"><span class="icon">󰝚</span> <span id="song">song</span></p>
+        <img id="album" alt="album cover">
+        <p id="now-playing">1/?</p>
+        <hr>
+        <p class="info"><span class="icon"></span> <span id="artist">artist</span></p>
+        <p class="info"><span class="icon"></span> <span id="album-title">album title</span></p>
+        <p class="info"><span class="icon">󰈣</span> <span id="genre">genre</span></p>
+        <p class="info"><span class="icon"></span> <span id="year">year</span></p>
+        <!-- bottom bar -->
       </div>
-      <img id="album" alt="album cover">
-      <p id="song">song title</p>
-      <p id="artist">artist</p>
-      <p id="album-title">album title</p>
-      <!-- sliders -->
-      <div class="slider_container">
-        <div class="current-time">00:00</div>
-        <div class="total-duration">00:00</div>
+      <div id="bar">
         <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
-      </div>
-      <div class="slider_container">
-        vol:
-        <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
+        <span id="playing-status">icon</span>
+        <span id="current-time">00:00</span>
+        <span id="battery"></span>
       </div>
       <!-- screen end div -->
     </div>
@@ -37,15 +37,13 @@
     <div class="up">▲</div>
     <div class="play-pause">
       <span onclick="prevTrack()" class="left">◄</span>
-      <button onclick="playpauseTrack()" id="play-pause-btn">
-        <span class="play">►</span>
-        <span class="pause">▌▌</span>
-      </button>
+      <button onclick="playpauseTrack()" id="play-pause-btn">󰐎</button>
       <span onclick="nextTrack()" class="right">►</span>
     </div>
     <div class="down">▼</div>
     <!-- music end div -->
   </div>
+  <p>built using sayantanm19's <a href="https://github.com/sayantanm19/js-music-player">js-music-player</a></p>
   <script src="main.js"></script>
 </body>
 
