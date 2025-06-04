@@ -101,15 +101,21 @@ p.info {
 #details-screen {
 	position: relative;
 	overflow: scroll;
-	height: 87%;
+	height: 88%;
 }
 
 #bar {
-	background: rgb(94, 94, 94);
+	background: #3b3b3b;
+	background: linear-gradient(
+		360deg,
+		rgba(59, 59, 59, 1) 0%,
+		rgba(227, 227, 227, 1) 100%
+	);
 	width: 100%;
 	font-size: 9px;
 	line-height: 0px;
 	padding: 0px;
+	margin: 0;
 }
 
 #playing-status {
@@ -200,24 +206,16 @@ button#play-pause-btn {
 .now-playing {
 	font-size: 1rem;
 }
-
-.slider_container {
-	position: relative;
-	width: 100%;
-	display: block;
-	text-align: center;
-}
-
 /* Modify the appearance of the slider */
 .seek_slider,
 .volume_slider {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
-	height: 2px;
+	height: 4px;
 	padding: 0px;
 	margin: 0px;
-	background: rgb(198, 198, 198);
+	background: rgb(81, 81, 81);
 	-webkit-transition: 0.2s;
 	transition: opacity 0.2s;
 }
@@ -237,7 +235,7 @@ button#play-pause-btn {
 }
 
 .seek_slider {
-	width: 97%;
+	width: 100%;
 }
 
 .volume_slider {
