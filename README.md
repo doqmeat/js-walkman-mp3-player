@@ -6,7 +6,7 @@ functional JS music player with the looks of one of those sony walkman mp3 playe
 
 the overall CSS will most likely be the same as the [last.fm widget](https://github.com/biancarosa/lastfm-last-played) i designed for my homepage but i would like it for the UI to be more accurate to the mp3 players around 2008.
 
-![playlist screen](examples/css.jpg)
+![playlist screen](examples/ui-playlist.jpg)
 ![irl sony walkman mp3 player now playing screen](examples/ui-currently-playing.jpg)
 
 my fun little summer project.
