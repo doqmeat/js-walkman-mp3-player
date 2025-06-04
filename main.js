@@ -1,20 +1,15 @@
-// track that is currently playing
+// tracks songs in playlist playing
 let now_playing = document.querySelector("#now-playing");
-// targets src attribute
-let track_art = document.querySelector("#album");
 
+// album cover img
+let track_art = document.querySelector("#album");
 let track_name = document.querySelector("#song");
 let track_artist = document.querySelector("#artist");
 let album_title = document.querySelector("#album-title");
 let genre = document.querySelector("#genre");
 let year = document.querySelector("#year");
 
-let playpause_btn = document.querySelector("#play-pause-btn");
-let next_btn = document.querySelector(".right");
-let prev_btn = document.querySelector(".left");
-
-let seek_slider = document.querySelector(".seek_slider");
-let volume_slider = document.querySelector(".volume_slider");
+let track_progress = document.querySelector(".track-progress");
 let curr_time = document.querySelector("#current-time");
 let playing_status = document.querySelector("#playing-status");
 
@@ -70,7 +65,7 @@ function loadTrack(track_index) {
 
 function resetValues() {
 	curr_time.textContent = "00:00";
-	seek_slider.value = 0;
+	track_progress.value = 0;
 }
 
 // Load the first track in the tracklist
@@ -99,26 +94,24 @@ function pauseTrack() {
 }
 
 function nextTrack() {
-	if (track_index < track_list.length - 1) track_index += 1;
+	if (track_index < track_list.length - 1) track_index++;
 	else track_index = 0;
 	loadTrack(track_index);
 	playTrack();
 }
 
 function prevTrack() {
-	if (track_index > 0) track_index -= 1;
-	else track_index = track_list.length;
+	// check if its the first track in playlist
+	if (track_index > 0) track_index--;
+	// if not, it updates to the index of the last track
+	else track_index = track_list.length - 1;
 	loadTrack(track_index);
 	playTrack();
 }
 
 function seekTo() {
-	let seekto = curr_track.duration * (seek_slider.value / 100);
+	let seekto = curr_track.duration * (track_progress.value / 100);
 	curr_track.currentTime = seekto;
-}
-
-function setVolume() {
-	curr_track.volume = volume_slider.value / 100;
 }
 
 function seekUpdate() {
@@ -127,7 +120,7 @@ function seekUpdate() {
 	if (!isNaN(curr_track.duration)) {
 		seekPosition = curr_track.currentTime * (100 / curr_track.duration);
 
-		seek_slider.value = seekPosition;
+		track_progress.value = seekPosition;
 
 		let currentMinutes = Math.floor(curr_track.currentTime / 60);
 		let currentSeconds = Math.floor(

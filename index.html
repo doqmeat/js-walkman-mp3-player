@@ -23,24 +23,37 @@
         <!-- bottom bar -->
       </div>
       <div id="bar">
-        <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
-        <span id="playing-status">icon</span>
+        <input type="range" min="1" max="100" value="0" class="track-progress" onchange="seekTo()">
+        <span id="playing-status"></span>
         <span id="current-time">00:00</span>
         <span id="battery"></span>
       </div>
       <!-- screen end div -->
     </div>
-    <!-- circles -->
-    <div class="circle big"></div>
+    <!-- grid controls -->
+    <div id="controls">
+      <span class="space"></span>
+      <button id="up">▲</button>
+      <span class="space"></span>
+      <!-- ---  -->
+      <button onclick="prevTrack()" id="left">◄</button>
+      <button onclick="playpauseTrack()" id="play-pause">󰐎</button>
+      <button onclick="nextTrack()" class="right">►</button>
+      <!-- --- -->
+      <span class="space"></span>
+      <button class="down">▼</button>
+      <span class="space"></span>
+    </div>
+    <!-- old controls ...... -->
+    <!-- <div class="circle big"></div>
     <div class="circle small"></div>
-    <!-- controls -->
     <div class="up">▲</div>
     <div class="play-pause">
       <span onclick="prevTrack()" class="left">◄</span>
       <button onclick="playpauseTrack()" id="play-pause-btn">󰐎</button>
       <span onclick="nextTrack()" class="right">►</span>
     </div>
-    <div class="down">▼</div>
+    <div class="down">▼</div> -->
     <!-- music end div -->
   </div>
   <p>built using sayantanm19's <a href="https://github.com/sayantanm19/js-music-player">js-music-player</a></p>
