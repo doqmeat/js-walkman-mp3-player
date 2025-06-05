@@ -66,6 +66,11 @@ hr {
 	text-shadow: 2px -1px 2px rgba(225, 212, 212, 0.815);
 }
 
+#controls button.down,
+#controls button.up {
+	cursor: not-allowed;
+}
+
 button#playlist-btn,
 button#current-song-btn {
 	position: relative;
@@ -136,6 +141,7 @@ button#play-pause {
 	font-size: 10px;
 	line-height: 13px;
 }
+
 /* playlist screen track listing album cover */
 #playlist li img {
 	display: inline-block;
@@ -266,6 +272,19 @@ span#current-song-playing {
 .track-progress::-moz-range-progress,
 .track-progress::-webkit-slider-runnable-track {
 	background: rgb(96, 155, 226);
+}
+
+#s-m-t-tooltip {
+	background: rgb(0, 0, 0);
+	border-radius: 2px;
+	font-size: 11px;
+	color: rgb(238, 215, 215);
+	border: 1px solid rgb(6, 6, 6);
+	max-width: 400px;
+	text-align: center;
+	z-index: 9999;
+	margin: 30px 15px 7px 12px;
+	padding: 5px;
 }
 
 @font-face {

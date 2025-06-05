@@ -5,7 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JS walkman mp3 player</title>
+  <!-- body stylesheet -->
   <link rel="stylesheet" type="text/css" href="style.css">
+  <!-- for customizable tooltips -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+  <script src="/files/tooltip-jquary.js"></script>
+  <script src="/files/tooltip.js"></script>
 </head>
 
 <body>
@@ -42,20 +47,20 @@
     </div>
     <!-- grid controls -->
     <div id="controls">
-      <button id="playlist-btn" onclick="showPlaylist()">playlist</button>
-      <button id="up">▲</button>
-      <button id="current-song-btn" onclick="showCurrentSong()">music</button>
+      <button title="playlist screen" id="playlist-btn" onclick="showPlaylist()">menu</button>
+      <button class="up">▲</button>
+      <button title="currently playing song screen" id="current-song-btn" onclick="showCurrentSong()">music</button>
       <!-- ---  -->
-      <button onclick="prevTrack()" id="left">◄</button>
+      <button title="previous track" onclick="prevTrack()" id="left">◄</button>
       <button onclick="playpauseTrack()" id="play-pause">󰐎</button>
-      <button onclick="nextTrack()" class="right">►</button>
+      <button title="next track" onclick="nextTrack()" class="right">►</button>
       <!-- --- -->
       <span class="space"></span>
       <button class="down">▼</button>
       <span class="space"></span>
     </div>
   </div>
-  <p>built using sayantanm19's <a href="https://github.com/sayantanm19/js-music-player">js-music-player</a></p>
+  <p>built using sayantanm19's <a href="https://github.com/sayantanm19/js-music-player">js-music-player</a>, <a href="https://www.nerdfonts.com/" target="_blank">nerdfonts</a>, <a href="https://manos.malihu.gr/style-my-tooltips-jquery-plugin/" target="_blank">Style-my-tooltips jQuery plugin</a></p>
   <script src="main.js"></script>
 </body>
 

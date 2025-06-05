@@ -29,6 +29,15 @@ let curr_track = document.createElement("audio");
 // Define the tracks that have to be played
 let track_list = [
 	{
+		name: "Camel8strike",
+		artist: "Asian Glow",
+		album: "11100011",
+		genre: "Shoegaze",
+		year: "2025",
+		image: "files/11100011.jpeg",
+		path: "https://files.catbox.moe/jfmagx.mp3",
+	},
+	{
 		name: "Cyber Space 2-1: Slice & Sway",
 		artist: "SEGA SOUND TEAM",
 		album: "Sonic Frontiers Original Soundtrack Stillness & Motion",
@@ -111,7 +120,7 @@ function loadTrack(track_index) {
 
 	// update current song name on bottom bar in playlist screen
 	current_song_playing.innerHTML =
-		"<marquee scrollamount='1'>" + track_list[track_index].name + "</marquee>";
+		"<marquee scrollamount='3'>" + track_list[track_index].name + "</marquee>";
 
 	updateTimer = setInterval(seekUpdate, 1000);
 	curr_track.addEventListener("ended", nextTrack);
@@ -137,6 +146,7 @@ function playTrack() {
 	isPlaying = true;
 	playing_status.textContent = "󰐊";
 	playing_status.style.color = "rgb(35, 236, 35)";
+	showCurrentSong();
 }
 
 // when track is paused
