@@ -51,7 +51,6 @@ hr {
 	grid-template-rows: 33% 33% 33%;
 	padding: 0px;
 	border-radius: 50%;
-	overflow: hidden;
 }
 
 /* buttons in controls CSS */
@@ -61,9 +60,22 @@ hr {
 	font-size: 13px;
 	background: inherit;
 	border: none;
+	border-radius: 50%;
 	color: #692222;
 	margin: 0px;
 	text-shadow: 2px -1px 2px rgba(225, 212, 212, 0.815);
+}
+
+button#playlist-btn,
+button#current-song-btn {
+	position: relative;
+	border: 1px solid rgb(213, 213, 213);
+	background: #ba3f3f;
+	color: white;
+	font-size: 10px;
+	text-align: center;
+	border-radius: 50%;
+	z-index: 20;
 }
 
 button#play-pause {
@@ -84,7 +96,7 @@ button#play-pause {
 	border: 20px solid black;
 	border-top-width: 30px;
 	border-bottom-width: 30px;
-	font-size: 11px;
+	font-size: 10px;
 	letter-spacing: 1px;
 	line-height: 13px;
 	overflow: hidden;
@@ -92,11 +104,46 @@ button#play-pause {
 	scrollbar-color: rgb(173, 173, 173) transparent;
 }
 
-/* details box  */
-#details-screen {
+/* screen class */
+.screen {
 	position: relative;
-	overflow: scroll;
-	height: 88%;
+	overflow: auto;
+	height: 83.4%;
+}
+
+/* playlist songs */
+#playlist li {
+	border: 1px solid transparent; /* this is here so it doesn't move when hovered */
+}
+
+#playlist li:hover {
+	cursor: pointer;
+	background: #fdaa03;
+	background: linear-gradient(
+		360deg,
+		rgba(253, 170, 3, 1) 0%,
+		rgba(255, 217, 140, 1) 91%
+	);
+	color: black;
+	border: 1px solid #f79501;
+}
+
+#playlist li span {
+	margin: 4px 4px;
+	display: inline-block;
+	vertical-align: middle;
+	width: 110px;
+	font-size: 10px;
+	line-height: 13px;
+}
+/* playlist screen track listing album cover */
+#playlist li img {
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 0px;
+	width: 30px;
+	border: 1px solid grey;
+	margin: 4px 4px;
 }
 
 /* music info */
@@ -120,8 +167,22 @@ p.info {
 	margin-left: 40%;
 }
 
+#top-bar {
+	background: #454343;
+	background: linear-gradient(
+		360deg,
+		rgb(108, 108, 108) 0%,
+		rgb(71, 71, 71) 100%
+	);
+	width: 100%;
+	text-align: center;
+	font-size: 9px;
+	padding: 1px;
+	margin: 0px;
+}
+
 /* bottom bar */
-#bar {
+#bottom-bar {
 	background: #454343;
 	background: linear-gradient(
 		360deg,
@@ -132,7 +193,30 @@ p.info {
 	font-size: 9px;
 	line-height: 0px;
 	padding: 0px;
-	margin: 0;
+	margin: 0px;
+}
+
+#bottom-bar #current {
+	display: inline;
+}
+
+/* current time of song */
+#bottom-bar span {
+	display: inline-block;
+	padding: 7px;
+}
+
+span#current-song-emoji {
+	font-size: 10px;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+span#current-song-playing {
+	display: inline-block;
+	padding: 0px;
+	width: 80px;
+	line-height: 10px;
 }
 
 /* playing status icon in the bar */
@@ -182,12 +266,6 @@ p.info {
 .track-progress::-moz-range-progress,
 .track-progress::-webkit-slider-runnable-track {
 	background: rgb(96, 155, 226);
-}
-
-/* current time of song */
-#current-time {
-	display: inline-block;
-	padding: 10px;
 }
 
 @font-face {

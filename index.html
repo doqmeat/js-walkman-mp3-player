@@ -11,30 +11,40 @@
 <body>
   <div id="music">
     <div id="screen">
-      <div id="details-screen">
+      <div id="top-bar">
+        <span id="current-screen">Music</span>
+      </div>
+      <div id="playlist" class="screen">
+        <!-- end of playlist screen -->
+      </div>
+      <div id="current-song" class="screen">
         <p class="info"><span class="icon">󰝚</span> <span id="song">song</span></p>
         <img id="album" alt="album cover">
         <p id="now-playing">1/?</p>
         <hr>
         <p class="info"><span class="icon"></span> <span id="artist">artist</span></p>
         <p class="info"><span class="icon"></span> <span id="album-title">album title</span></p>
-        <p class="info"><span class="icon">󰈣</span> <span id="genre">genre</span></p>
+        <p class="info"><span class="icon">󰌳</span> <span id="genre">genre</span></p>
         <p class="info"><span class="icon"></span> <span id="year">year</span></p>
-        <!-- bottom bar -->
+        <!-- end of current song screen -->
       </div>
-      <div id="bar">
+      <div id="bottom-bar">
         <input type="range" min="1" max="100" value="0" class="track-progress" onchange="seekTo()">
         <span id="playing-status"></span>
         <span id="current-time">00:00</span>
+        <div id="current">
+          <span id="current-song-emoji"></span>
+          <span id="current-song-playing">song playing</span>
+        </div>
         <span id="battery"></span>
       </div>
       <!-- screen end div -->
     </div>
     <!-- grid controls -->
     <div id="controls">
-      <span class="space"></span>
+      <button id="playlist-btn" onclick="showPlaylist()">playlist</button>
       <button id="up">▲</button>
-      <span class="space"></span>
+      <button id="current-song-btn" onclick="showCurrentSong()">music</button>
       <!-- ---  -->
       <button onclick="prevTrack()" id="left">◄</button>
       <button onclick="playpauseTrack()" id="play-pause">󰐎</button>

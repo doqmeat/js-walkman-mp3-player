@@ -1,7 +1,7 @@
 // tracks songs in playlist playing
 let now_playing = document.querySelector("#now-playing");
 
-// album cover img
+// song info
 let track_art = document.querySelector("#album");
 let track_name = document.querySelector("#song");
 let track_artist = document.querySelector("#artist");
@@ -12,8 +12,12 @@ let year = document.querySelector("#year");
 let track_progress = document.querySelector(".track-progress");
 let curr_time = document.querySelector("#current-time");
 let playing_status = document.querySelector("#playing-status");
+let current_song_playing = document.querySelector("#current-song-playing");
+let current_song_div = document.querySelector("#current");
 
-playing_status.textContent = "";
+let top_bar = document.querySelector("#current-screen");
+let currently_screen = document.querySelector("#current-song");
+let playlist_screen = document.querySelector("#playlist");
 
 let track_index = 0;
 let isPlaying = false;
@@ -44,6 +48,52 @@ let track_list = [
 	},
 ];
 
+// playlist screen stays hidden on load
+playlist_screen.style.display = "none";
+current_song_div.style.display = "none";
+
+function playlistMenu() {
+	for (i = 0; i < track_list.length; i++) {
+		playlist_screen.innerHTML +=
+			"<li onclick='playlistSelection(" +
+			i +
+			")'><img src='" +
+			track_list[i].image +
+			"' alt='album cover for" +
+			track_list[i].name +
+			"'><span>" +
+			track_list[i].name +
+			"</span></li>";
+	}
+}
+
+// loads playlist menu
+playlistMenu();
+
+function showPlaylist() {
+	top_bar.textContent = "Playlist";
+	currently_screen.style.display = "none";
+	playlist_screen.style.display = "block";
+	if (!isPlaying) current_song_div.style.display = "none";
+	else current_song_div.style.display = "inline";
+	curr_time.style.display = "none";
+}
+
+// playlist song selection
+function playlistSelection(song_index) {
+	loadTrack(song_index);
+	playTrack();
+	showCurrentSong(); // shows currently playing screen
+}
+
+function showCurrentSong() {
+	top_bar.textContent = "Music";
+	currently_screen.style.display = "block";
+	playlist_screen.style.display = "none";
+	current_song_div.style.display = "none";
+	curr_time.style.display = "inline-block";
+}
+
 function loadTrack(track_index) {
 	clearInterval(updateTimer);
 	resetValues();
@@ -58,6 +108,10 @@ function loadTrack(track_index) {
 	year.textContent = track_list[track_index].year;
 
 	now_playing.textContent = track_index + 1 + "/" + track_list.length;
+
+	// update current song name on bottom bar in playlist screen
+	current_song_playing.innerHTML =
+		"<marquee scrollamount='1'>" + track_list[track_index].name + "</marquee>";
 
 	updateTimer = setInterval(seekUpdate, 1000);
 	curr_track.addEventListener("ended", nextTrack);
