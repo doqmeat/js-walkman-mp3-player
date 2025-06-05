@@ -26,7 +26,7 @@ let updateTimer;
 // Create new audio element
 let curr_track = document.createElement("audio");
 
-// Define the tracks that have to be played
+// add your playlist here!
 let track_list = [
 	{
 		name: "Camel8strike",
@@ -64,7 +64,7 @@ current_song_div.style.display = "none";
 function playlistMenu() {
 	for (i = 0; i < track_list.length; i++) {
 		playlist_screen.innerHTML +=
-			"<li onclick='playlistSelection(" +
+			"<button onclick='playlistSelection(" +
 			i +
 			")'><img src='" +
 			track_list[i].image +
@@ -72,7 +72,7 @@ function playlistMenu() {
 			track_list[i].name +
 			"'><span>" +
 			track_list[i].name +
-			"</span></li>";
+			"</span></button>";
 	}
 }
 

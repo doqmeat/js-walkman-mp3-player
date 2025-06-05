@@ -56,7 +56,7 @@ hr {
 /* buttons in controls CSS */
 #controls button {
 	cursor: pointer;
-	font-family: inherit;
+	font-family: nerdfont, arial;
 	font-size: 13px;
 	background: inherit;
 	border: none;
@@ -117,11 +117,20 @@ button#play-pause {
 }
 
 /* playlist songs */
-#playlist li {
+#playlist button {
+	color: white;
+	text-align: left;
+	display: block;
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+	background: transparent;
+	font-family: inherit;
+	font-size: inherit;
 	border: 1px solid transparent; /* this is here so it doesn't move when hovered */
 }
 
-#playlist li:hover {
+#playlist button:hover {
 	cursor: pointer;
 	background: #fdaa03;
 	background: linear-gradient(
@@ -133,17 +142,17 @@ button#play-pause {
 	border: 1px solid #f79501;
 }
 
-#playlist li span {
+#playlist button span {
 	margin: 4px 4px;
 	display: inline-block;
 	vertical-align: middle;
-	width: 110px;
+	width: 70%;
 	font-size: 10px;
 	line-height: 13px;
 }
 
 /* playlist screen track listing album cover */
-#playlist li img {
+#playlist button img {
 	display: inline-block;
 	vertical-align: middle;
 	line-height: 0px;
@@ -202,6 +211,7 @@ p.info {
 	margin: 0px;
 }
 
+/* current song playing in playlist screen */
 #bottom-bar #current {
 	display: inline;
 }
@@ -243,6 +253,8 @@ span#current-song-playing {
 
 /* song progress bar */
 .track-progress {
+	accent-color: rgb(96, 155, 226);
+	-webkit-appearance: none;
 	cursor: help;
 	width: 100%;
 	height: 4px;
@@ -258,7 +270,19 @@ span#current-song-playing {
 }
 
 /* song progress bar - thumb */
-.track-progress::-webkit-slider-thumb,
+/* chrome */
+.track-progress::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	height: 4px;
+	width: 2px;
+	background: rgb(96, 155, 226);
+	cursor: pointer;
+	border: none;
+	border-radius: 0px;
+}
+
+/* firefox */
 .track-progress::-moz-range-thumb {
 	height: 2.6px;
 	width: 2px;
@@ -269,14 +293,15 @@ span#current-song-playing {
 }
 
 /* song progress - bar progress */
-.track-progress::-moz-range-progress,
-.track-progress::-webkit-slider-runnable-track {
+/* firefox */
+.track-progress::-moz-range-progress {
 	background: rgb(96, 155, 226);
 }
 
 #s-m-t-tooltip {
 	background: rgb(0, 0, 0);
 	border-radius: 2px;
+	font-family: arial;
 	font-size: 11px;
 	color: rgb(238, 215, 215);
 	border: 1px solid rgb(6, 6, 6);
@@ -285,6 +310,15 @@ span#current-song-playing {
 	z-index: 9999;
 	margin: 30px 15px 7px 12px;
 	padding: 5px;
+}
+
+@keyframes marquee {
+	0% {
+		left: 0;
+	}
+	100% {
+		left: -100%;
+	}
 }
 
 @font-face {
