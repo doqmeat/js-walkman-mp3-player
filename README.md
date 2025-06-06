@@ -1,18 +1,20 @@
-# JS walkman mp3 player (WIP)
+# JS walkman mp3 player
 
-functional JS music player with the looks of one of those sony walkman mp3 players.
+a functional JS music player with the looks of one of those sony walkman mp3 players from around 2008.
 
-![screenshot](examples/screenshot.jpg)
+![gif of mp3 player](examples/walkman.gif)
 
-the overall CSS will most likely be the same as the [last.fm widget](https://github.com/biancarosa/lastfm-last-played) i designed for my homepage but i would like it for the UI to be more accurate to the mp3 players around 2008.
+**it looks best on firefox!** see _issues_ for more info.
 
-![playlist screen](examples/ui-playlist.jpg)
-![irl sony walkman mp3 player now playing screen](examples/ui-currently-playing.jpg)
+## credit
 
-my fun little summer project.
+- built using sayantanm19's <a href="https://github.com/sayantanm19/js-music-player">js music player</a>
+- <a href="https://www.nerdfonts.com/" target="_blank">nerdfonts</a> for various symbols across the player
+- and <a href="https://manos.malihu.gr/style-my-tooltips-jquery-plugin/" target="_blank">Style-my-tooltips</a> for the customizable tooltips
+- thanks sony ig
 
 ### to-do's / ideas
 
-- [ ] screen for playlist menu
+- [x] screen for playlist menu
 - [ ] make time blink when song is paused
 - [x] screen for currently playing song
