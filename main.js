@@ -103,24 +103,25 @@ function showCurrentSong() {
 	curr_time.style.display = "inline-block";
 }
 
-function loadTrack(track_index) {
+function loadTrack(index) {
+	track_index = index;
 	clearInterval(updateTimer);
 	resetValues();
-	curr_track.src = track_list[track_index].path;
+	curr_track.src = track_list[index].path;
 	curr_track.load();
 
-	track_art.src = track_list[track_index].image;
-	track_name.textContent = track_list[track_index].name;
-	track_artist.textContent = track_list[track_index].artist;
-	album_title.textContent = track_list[track_index].album;
-	genre.textContent = track_list[track_index].genre;
-	year.textContent = track_list[track_index].year;
+	track_art.src = track_list[index].image;
+	track_name.textContent = track_list[index].name;
+	track_artist.textContent = track_list[index].artist;
+	album_title.textContent = track_list[index].album;
+	genre.textContent = track_list[index].genre;
+	year.textContent = track_list[index].year;
 
-	now_playing.textContent = track_index + 1 + "/" + track_list.length;
+	now_playing.textContent = index + 1 + "/" + track_list.length;
 
 	// update current song name on bottom bar in playlist screen
 	current_song_playing.innerHTML =
-		"<marquee scrollamount='3'>" + track_list[track_index].name + "</marquee>";
+		"<marquee scrollamount='3'>" + track_list[index].name + "</marquee>";
 
 	updateTimer = setInterval(seekUpdate, 1000);
 	curr_track.addEventListener("ended", nextTrack);
