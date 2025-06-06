@@ -2,6 +2,10 @@
 	box-sizing: border-box;
 }
 
+body {
+	font-family: arial;
+}
+
 /* mp3 player wrapper */
 #music {
 	position: relative;
