@@ -34,8 +34,8 @@ let track_list = [
 		album: "11100011",
 		genre: "Shoegaze",
 		year: "2025",
-		image: "files/11100011.jpeg",
-		path: "https://files.catbox.moe/jfmagx.mp3",
+		image: "files/11100011.jpeg", // album cover path
+		path: "https://files.catbox.moe/jfmagx.mp3", // mp3 audio path
 	},
 	{
 		name: "Cyber Space 2-1: Slice & Sway",

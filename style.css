@@ -10,7 +10,6 @@ body {
 #music {
 	position: relative;
 	font-family: arial, nerdfont;
-	grid-area: music;
 	padding-top: 1px;
 	background: rgb(232, 84, 84);
 	border-top: 1px;
