@@ -35,6 +35,16 @@ body {
 	margin: 0 0 0 5px;
 }
 
+/* 1/? tracks playing */
+#now-playing {
+	display: inline-block;
+	position: absolute;
+	float: right;
+	margin-top: 30%;
+	margin-left: 40%;
+}
+
+/* line below album cover */
 hr {
 	margin: 1px 0px;
 	padding: 0px;
@@ -69,11 +79,12 @@ hr {
 	text-shadow: 2px -1px 2px rgba(225, 212, 212, 0.815);
 }
 
-#controls button.down,
-#controls button.up {
+/* since these buttons don't do anything, they have a 'blocked' cursor */
+#controls button.down {
 	cursor: not-allowed;
 }
 
+/* the two mini curcle buttons */
 button#playlist-btn,
 button#current-song-btn {
 	position: relative;
@@ -86,6 +97,7 @@ button#current-song-btn {
 	z-index: 20;
 }
 
+/* play pause button */
 button#play-pause {
 	color: white;
 	border: 1px solid rgb(39, 11, 11);
@@ -112,14 +124,14 @@ button#play-pause {
 	scrollbar-color: rgb(173, 173, 173) transparent;
 }
 
-/* screen class */
+/* screen class (for playlist and currently playing song)*/
 .screen {
 	position: relative;
 	overflow: auto;
 	height: 83.4%;
 }
 
-/* playlist songs */
+/* playlist songs listing */
 #playlist button {
 	color: white;
 	text-align: left;
@@ -145,6 +157,7 @@ button#play-pause {
 	border: 1px solid #f79501;
 }
 
+/* button text */
 #playlist button span {
 	margin: 4px 4px;
 	display: inline-block;
@@ -154,7 +167,7 @@ button#play-pause {
 	line-height: 13px;
 }
 
-/* playlist screen track listing album cover */
+/* button album cover */
 #playlist button img {
 	display: inline-block;
 	vertical-align: middle;
@@ -164,25 +177,16 @@ button#play-pause {
 	margin: 4px 4px;
 }
 
-/* music info */
+/* currently playing screen music info */
 p.info {
 	margin: 4px 4px;
 	padding: 0;
 }
 
-/* music info icons  */
+/* icons  */
 .icon {
 	color: rgb(173, 174, 176);
 	font-size: 12px;
-}
-
-/* 1/? tracks playing */
-#now-playing {
-	display: inline-block;
-	position: absolute;
-	float: right;
-	margin-top: 30%;
-	margin-left: 40%;
 }
 
 #top-bar {
@@ -199,7 +203,6 @@ p.info {
 	margin: 0px;
 }
 
-/* bottom bar */
 #bottom-bar {
 	background: #454343;
 	background: linear-gradient(
@@ -225,12 +228,14 @@ p.info {
 	padding: 7px;
 }
 
+/* emoji that a song is playing */
 span#current-song-emoji {
 	font-size: 10px;
 	padding-left: 0px;
 	padding-right: 0px;
 }
 
+/* scrolling name of current song playing */
 span#current-song-playing {
 	display: inline-block;
 	padding: 0px;
@@ -296,11 +301,12 @@ span#current-song-playing {
 }
 
 /* song progress - bar progress */
-/* firefox */
+/* only on firefox */
 .track-progress::-moz-range-progress {
 	background: rgb(96, 155, 226);
 }
 
+/* tooltip custom css */
 #s-m-t-tooltip {
 	background: rgb(0, 0, 0);
 	border-radius: 2px;
@@ -315,15 +321,7 @@ span#current-song-playing {
 	padding: 5px;
 }
 
-@keyframes marquee {
-	0% {
-		left: 0;
-	}
-	100% {
-		left: -100%;
-	}
-}
-
+/* nerdfonts */
 @font-face {
 	font-family: "nerdfont";
 	src: url(files/symbolsnerdfont.ttf);

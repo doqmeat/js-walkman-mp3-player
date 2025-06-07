@@ -1,6 +1,11 @@
 # JS walkman mp3 player
 
-a functional JS music player with the looks of one of those sony walkman mp3 players from around 2008.
+a JS music player with the looks of one of those sony walkman mp3 players from around 2008.
+
+## features
+
+- playlist screen selection
+- search current song on youtube
 
 ![gif of mp3 player](examples/walkman.gif)
 
@@ -16,5 +21,5 @@ a functional JS music player with the looks of one of those sony walkman mp3 pla
 ### to-do's / ideas
 
 - [x] screen for playlist menu
-- [ ] make time blink when song is paused
+- [ ] make time blink when song is paused in currently playing screen
 - [x] screen for currently playing song

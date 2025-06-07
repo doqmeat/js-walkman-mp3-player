@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="files/favicon.gif">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JS walkman mp3 player</title>
   <!-- body stylesheet -->
@@ -39,7 +40,7 @@
         <span id="current-time">00:00</span>
         <div id="current">
           <span id="current-song-emoji"></span>
-          <span id="current-song-playing">song playing</span>
+          <span id="current-song-playing">current song playing</span>
         </div>
         <span id="battery"></span>
       </div>
@@ -48,15 +49,15 @@
     <!-- grid controls -->
     <div id="controls">
       <button title="playlist screen" id="playlist-btn" onclick="showPlaylist()">menu</button>
-      <button class="up">▲</button>
+      <button class="up" title="search current song on youtube" onclick="youtubeSearch()"></button>
       <button title="currently playing song screen" id="current-song-btn" onclick="showCurrentSong()">music</button>
       <!-- ---  -->
-      <button title="previous track" onclick="prevTrack()" id="left">◄</button>
+      <button title="previous track" onclick="prevTrack()" id="left"></button>
       <button onclick="playpauseTrack()" id="play-pause">󰐎</button>
-      <button title="next track" onclick="nextTrack()" class="right">►</button>
+      <button title="next track" onclick="nextTrack()" class="right"></button>
       <!-- --- -->
       <span class="space"></span>
-      <button class="down">▼</button>
+      <button class="down"></button>
       <span class="space"></span>
     </div>
   </div>
