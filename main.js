@@ -101,7 +101,9 @@ function loadTrack(index) {
 
 	// update current song name on bottom bar in playlist screen
 	current_song_playing.innerHTML =
-		"<marquee scrollamount='3'>" + track_list[index].name + "</marquee>";
+		"<marquee direction='left' scrollamount='3' behavior='scroll'>" +
+		track_list[index].name +
+		"</marquee>";
 
 	updateTimer = setInterval(seekUpdate, 1000);
 
