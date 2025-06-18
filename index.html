@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- coded with love by des -->
+
 <head>
   <meta charset="UTF-8">
   <link rel="icon" type="image/x-icon" href="files/favicon.gif">
@@ -17,12 +19,13 @@
 <body>
   <div id="music">
     <div id="screen">
+      <!-- top bar info-->
       <div id="top-bar">
         <span id="current-screen">Music</span>
       </div>
-      <div id="playlist" class="screen">
-        <!-- end of playlist screen -->
-      </div>
+      <!-- playlist screen -->
+      <div id="playlist" class="screen"></div>
+      <!-- song currently playing screen -->
       <div id="current-song" class="screen">
         <p class="info"><span class="icon">󰝚</span> <span id="song">song</span></p>
         <img id="album" alt="album cover">
@@ -34,6 +37,7 @@
         <p class="info"><span class="icon"></span> <span id="year">year</span></p>
         <!-- end of current song screen -->
       </div>
+      <!-- bottom bar -->
       <div id="bottom-bar">
         <input type="range" min="1" max="100" value="0" class="track-progress" onchange="seekTo()">
         <span id="playing-status"></span>
@@ -44,25 +48,27 @@
         </div>
         <span id="battery"></span>
       </div>
-      <!-- screen end div -->
     </div>
     <!-- grid controls -->
     <div id="controls">
       <button title="playlist screen" id="playlist-btn" onclick="showPlaylist()">menu</button>
       <button class="up" title="search current song on youtube" onclick="youtubeSearch()"></button>
       <button title="currently playing song screen" id="current-song-btn" onclick="showCurrentSong()">music</button>
-      <!-- ---  -->
+
       <button title="previous track" onclick="prevTrack()" id="left"></button>
       <button onclick="playpauseTrack()" id="play-pause">󰐎</button>
       <button title="next track" onclick="nextTrack()" class="right"></button>
-      <!-- --- -->
+
       <span class="space"></span>
       <button class="down"></button>
       <span class="space"></span>
     </div>
   </div>
+
+  <!-- credit and resources -->
   <p><a href="https://github.com/doqmeat/js-walkman-mp3-player">github repo</a> for info. <a href="https://ko-fi.com/s/df5738006f">ko-fi shop</a> for easy download.</p>
   <p>built using sayantanm19's <a href="https://github.com/sayantanm19/js-music-player">js-music-player</a>, <a href="https://www.nerdfonts.com/" target="_blank">nerdfonts</a>, <a href="https://manos.malihu.gr/style-my-tooltips-jquery-plugin/" target="_blank">Style-my-tooltips jQuery plugin</a>.</p>
+
   <script src="main.js"></script>
 </body>
 

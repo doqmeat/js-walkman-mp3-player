@@ -1,3 +1,7 @@
+/*
+using this for the music player: https://github.com/sayantanm19/js-music-player
+*/
+
 // song info
 let track_name = document.querySelector("#song");
 let track_artist = document.querySelector("#artist");
